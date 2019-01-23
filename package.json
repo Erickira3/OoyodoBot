@@ -1,0 +1,22 @@
+{
+  "name": "ohyodo",
+  "version": "1.0.0",
+  "description": "Js for discord bot",
+  "main": "test.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "MalScraper": "^2.4.5",
+    "mal-scraper": "^2.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "oohyodo"
+  ],
+  "author": "Erickira",
+  "license": "ISC"
+}

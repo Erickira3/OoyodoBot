@@ -39,26 +39,26 @@ async def on_message(message):
     if message.content.startswith('!stream'):
         ans = turnNameintoID(str(message.content).split('!stream ')[1])
         if "Offline" in ans:
-            msg = "{0.author.mention} il n'y a pas de stream en live".format(message)
+            msg = "{0.author.mention} No stream live".format(message)
             await client.send_message(message.channel, msg)
-        if "Unknown" in ans:
-            msg = "{0.author.mention} Streamer non trouvé, merci de vérifier le pseudo".format(message)
+        elif "Unknown" in ans:
+            msg = "{0.author.mention} Unknown username, please check it".format(message)
             await client.send_message(message.channel, msg)
         else:
-            msg = "{0.author.mention} Le stream est en live à l'addresse: " + str(ans)
+            msg = "{0.author.mention} Stream Online here: " + str(ans)
             msg = msg.format(message)
             await client.send_message(message.channel, msg)
     
     if message.content.startswith('?stream'):
-        streamerList = ['Erickira', 'Lyxilion', 'glaconbleu']
+        streamerList = ['StreamerOne', 'StreamerTwo', 'StreamerThree']
         for streamer in streamerList:
             ans = turnNameintoID(str(streamer))
             if "Offline" in ans:
-                msg = "{0.author.mention} Le streamer " + str(streamer) + " n'est pas en live"
+                msg = "{0.author.mention} The stream of " + str(streamer) + " is offline"
                 msg = msg.format(message)
                 await client.send_message(message.channel, msg)
             else:
-                msg = "{0.author.mention} Le stream de " + str(streamer) + " est en live à l'addresse: " + str(ans)
+                msg = "{0.author.mention} The stream of " + str(streamer) + " is live there: " + str(ans)
                 msg = msg.format(message)
                 await client.send_message(message.channel, msg)
 
